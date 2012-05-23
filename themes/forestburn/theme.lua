@@ -12,7 +12,7 @@
 -- Alternative icon sets and widget icons:
 --  * http://awesome.naquadah.org/wiki/Nice_Icons
 
-themes_dir = "/home/aidecoe/.config/awesome/themes"
+themes_dir = os.getenv("HOME") .. "/.config/awesome/themes"
 -- {{{ Main
 theme = {}
 theme.wallpaper_cmd = { "awsetbg -c " .. themes_dir .. "/forestburn/forest_fire.jpg" }

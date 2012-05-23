@@ -7,8 +7,6 @@ require("beautiful")
 -- Notification library
 require("naughty")
 
-home_dir = "/home/aidecoe"
-
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -36,7 +34,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init(home_dir .. "/.config/awesome/themes/forestburn/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/forestburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvtc"
