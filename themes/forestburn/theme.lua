@@ -20,6 +20,7 @@ theme.wallpaper_cmd = { "awsetbg -c " .. themes_dir .. "/forestburn/forest_fire.
 
 -- {{{ Styles
 theme.font      = "Terminus 9"
+theme.dmenufont = "terminus-12"
 
 -- {{{ Colors
 theme.fg_normal = "#bbbbbb"

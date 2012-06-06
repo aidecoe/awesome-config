@@ -43,6 +43,9 @@ editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 filemanager = "ranger"
 filemanager_cmd = terminal .. " -e " .. filemanager
+kchask_cmd = terminal .. " -e kchask"
+kchask_stop_cmd = terminal .. " -e kchask -k"
+dmenu_cmd = "dmenu_run -fn \'" .. theme.dmenufont .. "\' -nb \'" .. theme.bg_normal .. "\' -nf \'" .. theme.fg_normal .. "' -sb \'" .. theme.bg_focus .. "\' -sf \'" .. theme.fg_focus .. "\'"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -208,8 +211,12 @@ globalkeys = awful.util.table.join(
     --awful.key({ modkey,           }, "space", function() awful.layout.history.restore() end),
 
     -- Standard program
-    awful.key({ modkey,           }, "backslash", function () awful.util.spawn(terminal_cmd) end),
-    awful.key({ modkey, "Control" }, "backslash", function () awful.util.spawn(filemanager_cmd) end),
+    awful.key({ modkey,                    }, "backslash", function () awful.util.spawn(terminal_cmd) end),
+    awful.key({ modkey, "Control"          }, "backslash", function () awful.util.spawn(filemanager_cmd) end),
+    awful.key({ modkey, "Control"          }, "z", function () awful.util.spawn(kchask_cmd) end),
+    awful.key({ modkey, "Control", "Shift" }, "z", function () awful.util.spawn(kchask_stop_cmd) end),
+    awful.key({ modkey                     }, "p", function () awful.util.spawn(dmenu_cmd) end),
+
     awful.key({ modkey, "Control", "Shift" }, "r", awesome.restart),
     awful.key({ modkey, "Control", "Shift" }, "q", awesome.quit),
 
