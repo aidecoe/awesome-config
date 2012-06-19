@@ -25,5 +25,7 @@ awful.rules.rules = {
     { rule = { instance = "xmpp-irc-email" },
       properties = { tag = tags[1][9],
                      floating = false } },
+    { rule = { class = "libreoffice-writer" },
+      properties = { tag = tags[1][4] } },
 }
 -- }}}
